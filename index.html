@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>HBD 20 Feb</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Sarabun:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff8fa3;
+            --secondary-color: #ffd166;
+            --text-color: #5d4037;
+            --bg-gradient: radial-gradient(circle at top right, #fff0f3, #ffe3e3);
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.8);
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --shadow-strong: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg-gradient);
+            font-family: 'DM Serif Display', serif;
+            color: var(--text-color);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Texture overlay using a pseudo-element if desired, or simple gradient */
+        }
+
+        /* --- Floating Particles --- */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: floatUp 20s infinite linear;
+            backdrop-filter: blur(2px);
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(110vh) scale(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            90% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* --- Landing Page --- */
+        #landing-page {
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            z-index: 10;
+        }
+
+        .title-hbd {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 0px rgba(255, 255, 255, 1), 0 10px 20px rgba(255, 143, 163, 0.2);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .subtitle-date {
+            font-family: 'Sarabun', sans-serif;
+            font-weight: 300;
+            color: #8d6e63;
+            font-size: 1.5rem;
+            margin: 10px 0 40px 0;
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+
+        .main-cake {
+            width: 280px;
+            margin-bottom: 50px;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
+            animation: floatBob 3s ease-in-out infinite, fadeInUp 1s ease-out 0.4s backwards;
+        }
+
+        @keyframes floatBob {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Premium Button */
+        .btn-start {
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-family: 'Sarabun', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(255, 143, 163, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        .btn-start:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 143, 163, 0.4);
+            background: white;
+        }
+
+        .btn-start:active {
+            transform: scale(0.98);
+        }
+
+        .btn-start.locked {
+            background: rgba(200, 200, 200, 0.5);
+            color: #888;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none;
+            filter: grayscale(1);
+        }
+
+        /* --- Gift Feedback Styles --- */
+        .gift-image-placeholder {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .gift-image-placeholder img.main-gift {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .megif-icon {
+            width: 100px;
+            height: auto;
+            animation: bounce 2s infinite;
+        }
+
+        /* Fallback icon if no image */
+        .promo-icon {
+            font-size: 50px;
+            color: white;
+            opacity: 0.8;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .btn-feedback {
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: none;
+            background: #f0f4f8;
+            color: #333;
+            font-family: 'Sarabun', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s;
+        }
+
+        .btn-feedback:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* --- Game Area --- */
+        #game-area {
+            display: none;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease;
+        }
+
+        .end-message {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%) scale(0.9);
+            font-family: 'Sarabun', sans-serif;
+            z-index: 1;
+            opacity: 0;
+            /* Hidden initially */
+            pointer-events: none;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .end-message.visible {
+            opacity: 1;
+            transform: translateY(-50%) scale(1);
+            pointer-events: auto;
+            z-index: 100;
+        }
+
+        .end-message h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .end-message p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .card-container {
+            position: relative;
+            width: 90%;
+            max-width: 380px;
+            height: 600px;
+            perspective: 1000px;
+            z-index: 5;
+        }
+
+        .card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 30px;
+            box-shadow: var(--shadow-strong);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+            touch-action: none;
+            transform-origin: 50% 100%;
+            will-change: transform;
+            transition: transform 0.1s linear;
+        }
+
+        /* Glassmorphism finish on cards */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 30px;
+            border: 1px solid var(--glass-border);
+            pointer-events: none;
+            box-sizing: border-box;
+        }
+
+        .card.next-card {
+            transform: scale(0.92) translateY(20px);
+            opacity: 0.6;
+            pointer-events: none;
+            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s ease;
+            filter: blur(1px);
+        }
+
+        .card.animating {
+            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Card Content Styling */
+        .card-image-container {
+            width: 100%;
+            height: 60%;
+            padding: 15px;
+            box-sizing: border-box;
+            background: #fffafa;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-content {
+            padding: 20px 30px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: white;
+        }
+
+        .card-title {
+            font-family: 'Sarabun', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-text {
+            font-family: 'Sarabun', sans-serif;
+            font-weight: 400;
+            color: #666;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .wish-box {
+            background: #fff0f3;
+            padding: 15px;
+            border-radius: 15px;
+            font-style: italic;
+            color: #555;
+            position: relative;
+        }
+
+        .wish-box::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: rgba(255, 143, 163, 0.3);
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+
+        .shine {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 70%);
+            background-size: 200% 100%;
+            animation: shine 4s infinite linear;
+            pointer-events: none;
+        }
+
+        @keyframes shine {
+            0% {
+                background-position: 100%;
+            }
+
+            100% {
+                background-position: -100%;
+            }
+        }
+
+        /* --- Custom Modal --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-box {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            text-align: center;
+            max-width: 80%;
+            width: 300px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transform: scale(0.8);
+            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .modal-box h2 {
+            color: var(--primary-color);
+            font-family: 'Sarabun', sans-serif;
+            margin-top: 0;
+        }
+
+        .modal-box p {
+            font-family: 'Sarabun', sans-serif;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .btn-close {
+            margin-top: 20px;
+            padding: 10px 30px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Sarabun', sans-serif;
+            font-size: 1rem;
+        }
+
+        /* --- Secret Poster Styles --- */
+        .secret-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 8px 15px;
+            border-radius: 15px;
+            font-family: 'Sarabun', sans-serif;
+            font-size: 0.8rem;
+            color: #888;
+            cursor: pointer;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+        }
+
+        .secret-btn:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        /* --- Last Req Button Styles --- */
+        .last-req-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 8px 15px;
+            border-radius: 15px;
+            font-family: 'Sarabun', sans-serif;
+            font-size: 0.8rem;
+            color: #888;
+            cursor: pointer;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+            opacity: 0.5;
+            pointer-events: none;
+            /* Locked initially */
+            filter: grayscale(1);
+        }
+
+        .last-req-btn.unlocked {
+            opacity: 1;
+            pointer-events: auto;
+            filter: grayscale(0);
+            background: rgba(255, 215, 0, 0.2);
+            /* Gold tint */
+            border-color: rgba(255, 215, 0, 0.5);
+            color: #d4a373;
+        }
+
+        .last-req-btn.unlocked:hover {
+            background: rgba(255, 215, 0, 0.4);
+            transform: scale(1.05);
+        }
+
+        .poster-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        /* --- Last Req Modal Specifics --- */
+        .step-content {
+            display: none;
+            animation: fadeInStep 0.3s ease;
+        }
+
+        .step-content.active {
+            display: block;
+        }
+
+        .step-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .textarea-reason {
+            width: 100%;
+            height: 100px;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            font-family: 'Sarabun', sans-serif;
+            resize: none;
+            box-sizing: border-box;
+        }
+
+        @keyframes fadeInStep {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .poster-content {
+            background: #fffbf0;
+            /* Paper color */
+            width: 90%;
+            max-width: 500px;
+            max-height: 85vh;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(50px);
+            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            font-family: 'Sarabun', sans-serif;
+            line-height: 1.8;
+            color: #4a4a4a;
+            background-image: linear-gradient(#e8e8e8 1px, transparent 1px);
+            background-size: 100% 30px;
+            /* Notebook lines */
+        }
+
+        .poster-content h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4a373;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #d4a373;
+            padding-bottom: 10px;
+        }
+
+        .poster-text {
+            white-space: pre-wrap;
+            /* Preserve line breaks */
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        .poster-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #888;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* --- Responsive Queries --- */
+        @media (max-width: 480px) {
+            .title-hbd {
+                font-size: 2.5rem;
+            }
+
+            .subtitle-date {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+
+            .main-cake {
+                width: 220px;
+                margin-bottom: 30px;
+            }
+
+            .btn-start {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+
+            .end-message h1 {
+                font-size: 1.5rem;
+                /* Reduce font size on mobile */
+                margin-bottom: 5px;
+            }
+
+            .gift-image-placeholder {
+                width: 100%;
+                /* Use full width inside container */
+                max-width: 300px;
+                /* Limit max width */
+                height: auto;
+                /* Let height adjust */
+                flex-wrap: wrap;
+                /* Allow wrapping if needed */
+                justify-content: center;
+            }
+
+            .gift-image-placeholder img.main-gift {
+                width: 150px;
+                /* Smaaaller gift image */
+                height: 150px;
+            }
+
+            .megif-icon {
+                width: 60px;
+                /* Smaller icons */
+            }
+
+            .btn-feedback {
+                padding: 8px 12px;
+                /* Smaller buttons */
+                font-size: 0.85rem;
+            }
+
+            .card-container {
+                width: 85%;
+                height: 500px;
+            }
+
+            .card-image-container {
+                height: 55%;
+            }
+
+            .card-content {
+                padding: 15px 20px;
+            }
+
+            .card-title {
+                font-size: 1.2rem;
+            }
+
+            .card-text {
+                font-size: 0.9rem;
+            }
+
+            .end-message {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                position: relative;
+                top: auto;
+                transform: none;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+
+            .end-message.visible {
+                transform: none;
+                top: auto;
+                position: relative;
+            }
+
+            .btn-group {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+            .last-req-btn,
+            .secret-btn {
+                position: static;
+                transform: none;
+                width: auto;
+                margin: 5px 0;
+                font-size: 0.85rem;
+                text-align: center;
+            }
+
+            .modal-box {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .poster-content {
+                width: 95%;
+                padding: 20px;
+                max-height: 80vh;
+            }
+        }
+
+        /* iPad / Tablet Portrait Mode Optimization */
+        @media (min-width: 481px) and (max-width: 1024px) and (orientation: portrait) {
+            .end-message {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                min-height: 100dvh;
+                /* Modern viewport unit */
+                position: relative;
+                top: auto;
+                transform: none;
+                padding: 40px 20px;
+                padding-bottom: env(safe-area-inset-bottom);
+                box-sizing: border-box;
+            }
+
+            .end-message h1 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+
+            .gift-image-placeholder img.main-gift {
+                width: 250px;
+                height: 250px;
+            }
+
+            .btn-group {
+                gap: 20px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            .btn-feedback {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+
+            .last-req-btn,
+            .secret-btn {
+                position: static;
+                transform: none;
+                width: auto;
+                margin: 10px 0;
+                font-size: 1rem;
+                text-align: center;
+            }
+
+            .card-container {
+                width: 80%;
+                height: 60vh;
+            }
+        }
+
+        /* Force mobile layout to respect safe area */
+        @media (max-width: 480px) {
+            .end-message {
+                min-height: 100dvh;
+                padding-bottom: env(safe-area-inset-bottom);
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        /* Landscape Mode Mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .card-container {
+                height: 90vh;
+                /* Use viewport height */
+                width: 60vh;
+                /* Maintain aspect ratio roughly */
+                max-width: 400px;
+            }
+
+            .card-image-container {
+                height: 50%;
+                /* Adjust image height */
+            }
+
+            .main-cake {
+                width: 120px;
+                /* Smaller cake */
+                margin-bottom: 10px;
+            }
+
+            .title-hbd {
+                font-size: 2rem;
+                /* Smaller title */
+            }
+
+            .subtitle-date {
+                margin: 5px 0 15px 0;
+            }
+
+            .end-message {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                padding-top: 10px;
+            }
+
+            .end-message h1 {
+                font-size: 1.2rem;
+                margin-bottom: 5px;
+            }
+
+            .gift-image-placeholder {
+                margin-bottom: 5px;
+                gap: 5px;
+            }
+
+            .gift-image-placeholder img.main-gift {
+                width: 100px;
+                height: 100px;
+            }
+
+            .megif-icon {
+                width: 40px;
+            }
+
+            .btn-group {
+                margin-top: 5px;
+            }
+
+            .btn-feedback {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+            }
+
+            .last-req-btn {
+                bottom: 10px;
+                left: 10px;
+                transform: none;
+            }
+
+            .secret-btn {
+                bottom: 10px;
+                right: 10px;
+                left: auto;
+                transform: none;
+            }
+        }
+
+        /* Short screens (Laptops/Tablets) - Restored */
+        @media (max-height: 700px) and (min-width: 481px) {
+            .card-container {
+                height: 450px;
+            }
+
+            .card-image-container {
+                height: 50%;
+            }
+
+            .main-cake {
+                width: 180px;
+                margin-bottom: 20px;
+            }
+
+            .title-hbd {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Particles -->
+    <div class="particles" id="particles"></div>
+
+    <div id="landing-page">
+        <h1 class="title-hbd">HAPPY BIRTHDAY</h1>
+        <h2 class="subtitle-date">20 FEBRUARY</h2>
+
+        <img src="cake.png" class="main-cake" alt="Birthday Cake">
+
+        <button class="btn-start" id="startBtn" onclick="startGame()">
+            Checking Date...
+        </button>
+    </div>
+
+    <div id="game-area">
+        <div class="end-message">
+            <h1 style="font-size: 2rem; margin-bottom: 10px;">ของขวัญวันเกิดที่ให้ไปชอบมั้ยค้าบ</h1>
+
+            <div class="gift-image-placeholder">
+                <img src="Megif.gif" class="megif-icon" alt="Megif">
+                <!-- Placeholder for the gift image. User can replace src. -->
+                <img src="https://placehold.co/400x400/bde0fe/ffffff?text=Gift+Photo" class="main-gift"
+                    alt="Gift Placeholder">
+                <img src="Megif.gif" class="megif-icon" alt="Megif">
+            </div>
+
+            <div class="btn-group">
+                <button class="btn-feedback" onclick="selectFeedback('love')">ชอบมากกกกกก</button>
+                <button class="btn-feedback" onclick="selectFeedback('like')">ชอบ</button>
+                <button class="btn-feedback" onclick="selectFeedback('dislike')">ไม่ชอบ T^T</button>
+            </div>
+
+            <button class="secret-btn" onclick="openPoster()">ไม่เกี่ยวกับวันเกิดนะครับอันนี้</button>
+            <button class="last-req-btn" id="lastReqBtn" onclick="openLastReq()">Last Req (Locked 🔒)</button>
+        </div>
+
+        <div class="card-container" id="cardStack">
+
+            <!-- Card 3: New Moo Krata Card (Bottom-most logic-wise, but we want it first/middle? Let's stack them: Last in HTML is Top) -->
+            <!-- HTML Structure: The last element is visually on TOP. So we order them Reverse-Chronologically for viewing -->
+
+            <!-- Card 1 (Bottom of stack): Panda -->
+            <!-- Card 1 (Bottom of stack): Girlfriend -->
+            <!-- Card 2 (Middle): Moo Krata (New Request) -->
+            <div class="card">
+                <div class="card-image-container" style="background: #FFF8E1;">
+                    <img src="moota.png" class="card-image" alt="Moo Krata">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">จัดทำเมื่อวันที่เราไปอีสหมูทะด้วยกันนวันไหนเดาเอาอิอิ</h2>
+                    <p class="card-text">อร่อยมักกแต่แอบจุก 😋</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="arp.png" class="card-image">
+                </div>
+                <div class="card-content">
+                    <div class="wish-box">
+                        <p class="card-text" style="font-size: 0.95rem; margin:0;">
+                            สุขสันต์วันเกิดนะคั้บ มีความสุขมากๆสุขภาพร่างกายแข็งแรงๆขอแบบ
+                            ม่ายป่วยม่ายเจ็บม่ายไข้ให้มีรอยยิ้มในทุ้กๆวันขอให้พบเจอแต่คนดีๆมีเรื่องที่ปวดหัวกลุ้มใจก็ขอให้ผ่านไปได้เร็วๆและผ่านไปได้ด้วยดีนะคั้บบ
+                        </p>
+                    </div>
+                </div>
+                <div class="shine"></div>
+            </div>
+            <!-- Card 3 (Top): Panda (Intro) -->
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="panda.png" class="card-image" style="object-fit: contain;">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">อาโป to อาเปียว</h2>
+                    <p class="card-text">ปัดขวาเพื่อดูการ์ดใบต่อไป -></p>
+                </div>
+                <div class="shine"></div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div class="modal-overlay" id="customModal">
+        <div class="modal-box">
+            <h2 id="modalTitle">Message</h2>
+            <p id="modalText">Details</p>
+            <button class="btn-close" onclick="closeModal()">OK</button>
+        </div>
+    </div>
+
+    <!-- Poster Overlay -->
+    <div class="poster-overlay" id="posterOverlay">
+        <div class="poster-content">
+            <button class="poster-close" onclick="closePoster()">&times;</button>
+            <h2>ถึงคุณ...</h2>
+            <div class="poster-text">
+                ตอนแรกจะจบที่ของขวัญแต่ข้อความนี้ทำมาเพิ่มใหม่ในตอนนี่เราเลิกคุยกันนะครับเนื่องจากมีเหตุการณ์อะไรก็ม่ายรุ้เกิดขึ้นทำให้เราไม่ได้คุยกันต่อซึ่งอาจจะผิดที่ตัวผมเองที่ยังดีไม่พอไม่ว่าจะเรื่องใดๆบางทีผมมันซื่อบื้อหน่ะT-T
+                หรือไม่ก็คุณก็คงไม่ได้ชอบผมจริงๆแต่ก็ไม่เป็นไร
+
+                ผมอยากบอกว่าคุณเป็นคนคุยคนแรกที่ผมมูฟออนยากมาก
+                หลังจากเลิกคุยกับคุณผมไม่อยากคุยกับใครต่อเลยย
+                อาจจะต้องใช้เวลาหน่อย ทั้งๆที่คุยกันแค่ ประมาน 3
+                อาทิตย์แต่รู้สึกว่าทำไมมันยากจังแต่ไม่เป็นไรเดี๋ยวผมก็คงดีขึ้น
+
+                และอยากจะบอกคุณอีกว่าผมมีความสุขมากที่ได้คุยกับคุณผมยังอยากไปกินข้าว เล่นเกมโม้อวดคุณ
+                โทรคุยกับคุณ อยากอ่านหนังสือด้วยd หรือการวัดคอแข็งที่เราเคยนัดกัน แต่ก็คงไม่ได้แล้ว
+                ถึงเราจะไม่ได้คุยกันแล้ว แต่อยากจะบอกคุณว่า
+                ผมยังห่วงใยคุณเสมออยากให้คุณสอบได้ดีๆอยากให้คุณตื่นเรียนคาบเช้าให้ทันทุ้กวัน
+                อยากให้กินหมุกรอบแซลมอนกุ้งร้านอร่อยๆอยากให้ดูการ์ตูนสนุกเท่ามายฮีโร่ทุกเรื่อง
+                อยากให้กินแสงโสมได้เก่งเท่าซิลเวอร์วูฟ อยากให้คุณใช้ชีวิตให้มีความสุขที่สุด
+
+                และผมอยากขอโทษถ้าเรื่องไหนผมทำให้คุณไม่ชอบหรือไม่สบายใจ ผมขอโทษจริงๆ ยังเป็นห่วงคุณเสมอนะะ
+            </div>
+        </div>
+    </div>
+
+    <!-- Last Req Modal -->
+    <div class="modal-overlay" id="lastReqModal">
+        <div class="modal-box" style="width: 400px; max-width: 90%;">
+
+            <!-- Step 1 -->
+            <div id="reqStep1" class="step-content active">
+                <p>คุณไม่จำเป็นต้องทำก็ได้นะครับผมแค่ทำไว้เผื่อคุณจะมาทำ T-T
+                    แต่ถ้าทำจะช่วยผมได้มากคั้บบถ้ากดไปช่วยทำให้จบด้วยน้าา</p>
+                <div class="step-buttons">
+                    <button class="btn-feedback" onclick="nextReqStep(2)">ต่อไป</button>
+                    <button class="btn-feedback" style="background:#ffadad; color:white;"
+                        onclick="closeLastReq()">ยกเลิก</button>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div id="reqStep2" class="step-content">
+                <p>ถ้าผมบอกว่าผมสามารถรอจนคุณพร้อมได้ คุณจะให้โอกาสผมกลับมาคุยได้มั้ยคับ</p>
+                <div class="step-buttons">
+                    <button class="btn-feedback" style="background:#caffbf; color:#555;"
+                        onclick="reqResult('yes')">ได้</button>
+                    <button class="btn-feedback" style="background:#ffadad; color:white;"
+                        onclick="reqResult('no')">ไม่</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Yes -->
+            <div id="reqStepYes" class="step-content">
+                <h2 style="color:#4caf50;">ขอบคุณครับ!</h2>
+                <p>คุณตกลงแล้วนะแคปจอมาให้ผมดูด้วย 🥰</p>
+                <button class="btn-close" onclick="closeLastReq()">ตกลง</button>
+            </div>
+
+            <!-- Step 3: No -->
+            <div id="reqStepNo" class="step-content">
+                <p>ขอโทดนะคับแต่มีอีกหนึ่งคำถามที่ผมยังอยากรู้วันนั้นก็ม่ายได้ถาม
+                    แต่ช่วยบอกเหตุผลที่แท้จริงที่คุณไม่ไปต่อกับผมที่ไม่ใช่คุณไม่พร้อมได้มั้ยย
+                    มันจะชช่วยผมให้สบายใจและมูฟออนจากคุณได้
+                    100% ยิ่งกว่า plus ultra
+                    ถือว่าช่วยหน่อยนะคั้บและไม่ต้องกลัวผมโกดคั้บบอกจากความรู้สึกตรงๆได้เลยยคับ</p>
+                <textarea class="textarea-reason" id="reasonText" placeholder="ช่วยเขียนหน่อยน้า..."></textarea>
+                <button class="btn-close" onclick="submitReason()">ส่งข้อความ</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // State
+        let posterOpened = false;
+        // Create Particles
+        const particlesContainer = document.getElementById('particles');
+        const colors = ['#ffadad', '#ffd6a5', '#fdffb6', '#caffbf', '#9bf6ff', '#a0c4ff', '#bdb2ff', '#ffc6ff'];
+
+        for (let i = 0; i < 20; i++) {
+            let p = document.createElement('div');
+            p.className = 'particle';
+            let size = Math.random() * 20 + 5;
+            p.style.width = p.style.height = size + 'px';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDelay = Math.random() * 5 + 's';
+            p.style.animationDuration = (Math.random() * 10 + 15) + 's';
+            p.style.background = colors[Math.floor(Math.random() * colors.length)];
+            p.style.opacity = Math.random() * 0.5 + 0.1;
+            particlesContainer.appendChild(p);
+        }
+
+        // --- Transition Logic ---
+        let isLocked = true;
+
+        function checkCountdown() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const targetDate = new Date(`February 13, ${currentYear} 21:14:00`).getTime();
+            const distance = targetDate - now.getTime();
+
+            const btn = document.getElementById('startBtn');
+
+            if (distance < 0) {
+                // Unlock
+                isLocked = false;
+                btn.classList.remove('locked');
+                btn.innerHTML = 'Open Gift 🎁';
+                // Optional: Stop interval if needed, but let's keep it simple
+            } else {
+                // Lock
+                isLocked = true;
+                btn.classList.add('locked');
+
+                // Calculate time
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                btn.innerHTML = `Wait: ${days}d ${hours}h ${minutes}m ${seconds}s 🔒`;
+            }
+        }
+
+        // Run immediately and then every second
+        checkCountdown();
+        setInterval(checkCountdown, 1000);
+
+        function startGame() {
+            if (isLocked) return;
+
+            const landing = document.getElementById('landing-page');
+            landing.style.opacity = '0';
+            landing.style.transform = 'scale(1.1)'; // Slight zoom out effect
+            landing.style.pointerEvents = 'none';
+
+            setTimeout(() => {
+                landing.style.display = 'none';
+
+                const game = document.getElementById('game-area');
+                game.style.display = 'flex';
+                // Force Reflow
+                game.offsetWidth;
+                game.style.opacity = '1';
+
+                initCardStack();
+            }, 600);
+        }
+
+        // --- Card Swipe Logic ---
+        const stack = document.getElementById('cardStack');
+        let cardElements = [];
+        let currentIndex = -1;
+
+        let isDragging = false;
+        let startX = 0, currentX = 0;
+        let currentCard = null;
+
+        function initCardStack() {
+            cardElements = Array.from(stack.querySelectorAll('.card'));
+            currentIndex = cardElements.length - 1;
+            updateCardStyles();
+            addListeners();
+        }
+
+        function updateCardStyles() {
+            cardElements.forEach((card, index) => {
+                card.classList.remove('next-card', 'animating');
+                card.style.transform = '';
+                card.style.filter = 'none';
+
+                if (index === currentIndex) {
+                    card.style.zIndex = 10;
+                    card.style.opacity = 1;
+                    card.style.transform = 'scale(1) translateY(0) rotate(0deg)';
+                } else if (index === currentIndex - 1) {
+                    card.classList.add('next-card');
+                    card.style.zIndex = 5;
+                } else {
+                    card.style.opacity = 0;
+                    card.style.zIndex = 0;
+                }
+            });
+        }
+
+        function addListeners() {
+            if (currentIndex >= 0) {
+                currentCard = cardElements[currentIndex];
+                currentCard.addEventListener('mousedown', onDragStart);
+                currentCard.addEventListener('touchstart', onDragStart, { passive: false });
+            }
+        }
+
+        function removeEventListeners(el) {
+            if (!el) return;
+            el.removeEventListener('mousedown', onDragStart);
+            el.removeEventListener('touchstart', onDragStart);
+        }
+
+        document.addEventListener('mousemove', onDragMove);
+        document.addEventListener('mouseup', onDragEnd);
+        document.addEventListener('touchmove', onDragMove, { passive: false });
+        document.addEventListener('touchend', onDragEnd);
+
+        function onDragStart(e) {
+            if (currentIndex < 0) return;
+            isDragging = true;
+            startX = getClientX(e);
+            currentCard = cardElements[currentIndex];
+            currentCard.classList.remove('animating');
+        }
+
+        function onDragMove(e) {
+            if (!isDragging || !currentCard) return;
+
+            // Prevent vertical scroll on touch
+            if (e.type === 'touchmove') {
+                // e.preventDefault(); 
+            }
+
+            currentX = getClientX(e);
+            let deltaX = currentX - startX;
+            let rotate = deltaX * 0.05;
+
+            currentCard.style.transform = `translateX(${deltaX}px) rotate(${rotate}deg)`;
+
+            // Animate next card coming up
+            if (currentIndex > 0) {
+                const nextCard = cardElements[currentIndex - 1];
+                const progress = Math.min(Math.abs(deltaX) / 200, 1);
+                const scale = 0.92 + (progress * 0.08); // 0.92 -> 1.0
+                const translateY = 20 - (progress * 20); // 20 -> 0
+                const blur = 1 - progress; // 1px -> 0px
+
+                nextCard.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+                nextCard.style.filter = `blur(${blur}px)`;
+                nextCard.style.opacity = 0.6 + (progress * 0.4);
+            }
+        }
+
+        function onDragEnd(e) {
+            if (!isDragging || !currentCard) return;
+            isDragging = false;
+
+            let deltaX = currentX - startX;
+            const threshold = 120; // Need to drag at least 120px
+
+            currentCard.classList.add('animating');
+
+            if (Math.abs(deltaX) > threshold) {
+                // Fly out
+                let direction = deltaX > 0 ? 1 : -1;
+                let endX = window.innerWidth * direction * 1.2;
+                let rotate = deltaX > 0 ? 45 : -45;
+
+                currentCard.style.transform = `translate(${endX}px, 100px) rotate(${rotate}deg)`;
+
+                setTimeout(() => {
+                    if (currentCard) {
+                        currentCard.style.display = 'none';
+                        removeEventListeners(currentCard);
+                        currentIndex--;
+                        currentCard = null;
+
+                        if (currentIndex >= 0) {
+                            updateCardStyles();
+                            addListeners();
+                        } else {
+                            // End of stack -> Enable interaction with end message
+                            stack.style.pointerEvents = 'none';
+                            const endMsg = document.querySelector('.end-message');
+                            if (endMsg) endMsg.classList.add('visible');
+                        }
+                    }
+                }, 400);
+
+            } else {
+                // Snap back
+                currentCard.style.transform = `translate(0px, 0px) rotate(0deg)`;
+
+                if (currentIndex > 0) {
+                    const nextCard = cardElements[currentIndex - 1];
+                    nextCard.classList.add('animating');
+                    nextCard.style.transform = `scale(0.92) translateY(20px)`;
+                    nextCard.style.filter = `blur(1px)`;
+                    nextCard.style.opacity = 0.6;
+
+                    setTimeout(() => {
+                        nextCard.classList.remove('animating');
+                    }, 400);
+                }
+            }
+        }
+
+        function getClientX(e) {
+            return e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+        }
+
+        function selectFeedback(type) {
+            sendWebhook('User clicked Feedback: ' + type);
+            if (type === 'love') {
+                showModal('ขอบคุณค้าบ! ❤️', 'ดีใจที่สุดเยยยย!🥰');
+                // Optional: Trigger more confetti
+            } else if (type === 'like') {
+                showModal('เย้! 🎉', 'ดีใจที่ชอบน้าาา');
+            } else {
+                showModal('เสียจุย 🥺', 'ขอโทษษษ T^T เดี๋ยวแก้ตัวใหม่นะ');
+            }
+        }
+
+        function showModal(title, text) {
+            const modal = document.getElementById('customModal');
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalText').innerText = text;
+
+            modal.style.display = 'flex';
+            // Trigger reflow
+            modal.offsetWidth;
+            modal.style.opacity = '1';
+            modal.querySelector('.modal-box').style.transform = 'scale(1)';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('customModal');
+            modal.style.opacity = '0';
+            modal.querySelector('.modal-box').style.transform = 'scale(0.8)';
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // --- Poster Logic ---
+        function openPoster() {
+            sendWebhook('User opened Secret Message Poster');
+            const poster = document.getElementById('posterOverlay');
+            poster.style.display = 'flex';
+            // Trigger reflow
+            poster.offsetWidth;
+            poster.style.opacity = '1';
+            poster.querySelector('.poster-content').style.transform = 'translateY(0)';
+
+            // Unlock Last Req
+            if (!posterOpened) {
+                posterOpened = true;
+                const btn = document.getElementById('lastReqBtn');
+                btn.classList.add('unlocked');
+                btn.innerHTML = 'Last Req 🔓';
+            }
+        }
+
+        function closePoster() {
+            const poster = document.getElementById('posterOverlay');
+            poster.style.opacity = '0';
+            poster.querySelector('.poster-content').style.transform = 'translateY(50px)';
+            setTimeout(() => {
+                poster.style.display = 'none';
+            }, 500);
+        }
+
+        // --- Last Req Logic ---
+        function openLastReq() {
+            sendWebhook('User opened Last Req');
+            const modal = document.getElementById('lastReqModal');
+            // Reset to Step 1
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            document.getElementById('reqStep1').classList.add('active');
+
+            modal.style.display = 'flex';
+            setTimeout(() => { modal.style.opacity = '1'; modal.querySelector('.modal-box').style.transform = 'scale(1)'; }, 10);
+        }
+
+        function closeLastReq() {
+            const modal = document.getElementById('lastReqModal');
+            modal.style.opacity = '0';
+            modal.querySelector('.modal-box').style.transform = 'scale(0.8)';
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        function nextReqStep(step) {
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            if (step === 2) {
+                document.getElementById('reqStep2').classList.add('active');
+            }
+        }
+
+        function reqResult(answer) {
+            sendWebhook('User answered Last Req: ' + answer);
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            if (answer === 'yes') {
+                document.getElementById('reqStepYes').classList.add('active');
+            } else {
+                document.getElementById('reqStepNo').classList.add('active');
+            }
+        }
+
+        function submitReason() {
+            const reason = document.getElementById('reasonText').value;
+            sendWebhook('User submitted Last Req Reason: ' + reason);
+            closeLastReq();
+            alert('ขอบคุณครับ และคุณห้ามพิมมาขอโทดผมคุณไม่ได้ผิดอะไรเลยย ดูแลตัวเองดีๆใช้ชีวิตให้มีความสุขนะครับ');
+        }
+
+        // --- Webhook Helper ---
+        function sendWebhook(message) {
+            const webhookUrl = 'https://discordapp.com/api/webhooks/1471867264457248960/PS0dt9S7FmaQeZ5TFiam5TenEAtPD610luvqtrhcW_i2tj5NSjwFOlsRGUIGApRPpOR-';
+
+            // Basic payload for Discord
+            const payload = {
+                content: `**Activity Log:** ${message}`
+            };
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+                .then(response => console.log('Webhook sent:', response))
+                .catch(error => console.error('Error sending webhook:', error));
+        }
+
+    </script>
+</body>
+
+</html>
