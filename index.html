@@ -34,10 +34,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Texture overlay using a pseudo-element if desired, or simple gradient */
+            align-items: center;
         }
 
-        /* --- Floating Particles --- */
+
         .particles {
             position: absolute;
             top: 0;
@@ -77,7 +77,7 @@
             }
         }
 
-        /* --- Landing Page --- */
+
         #landing-page {
             text-align: center;
             position: absolute;
@@ -142,7 +142,7 @@
             }
         }
 
-        /* Premium Button */
+
         .btn-start {
             background: rgba(255, 255, 255, 0.8);
             border: 2px solid white;
@@ -180,7 +180,7 @@
             filter: grayscale(1);
         }
 
-        /* --- Gift Feedback Styles --- */
+
         .gift-image-placeholder {
             width: 100%;
             display: flex;
@@ -204,7 +204,7 @@
             animation: bounce 2s infinite;
         }
 
-        /* Fallback icon if no image */
+
         .promo-icon {
             font-size: 50px;
             color: white;
@@ -239,7 +239,7 @@
             color: var(--primary-color);
         }
 
-        /* --- Game Area --- */
+
         #game-area {
             display: none;
             opacity: 0;
@@ -260,7 +260,6 @@
             font-family: 'Sarabun', sans-serif;
             z-index: 1;
             opacity: 0;
-            /* Hidden initially */
             pointer-events: none;
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
@@ -310,7 +309,7 @@
             transition: transform 0.1s linear;
         }
 
-        /* Glassmorphism finish on cards */
+
         .card::before {
             content: '';
             position: absolute;
@@ -336,7 +335,7 @@
             transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        /* Card Content Styling */
+
         .card-image-container {
             width: 100%;
             height: 60%;
@@ -423,7 +422,7 @@
             }
         }
 
-        /* --- Custom Modal --- */
+
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -476,7 +475,7 @@
             font-size: 1rem;
         }
 
-        /* --- Secret Poster Styles --- */
+
         .secret-btn {
             position: absolute;
             bottom: 20px;
@@ -499,7 +498,7 @@
             transform: scale(1.05);
         }
 
-        /* --- Last Req Button Styles --- */
+
         .last-req-btn {
             position: absolute;
             bottom: 20px;
@@ -516,7 +515,7 @@
             backdrop-filter: blur(5px);
             opacity: 0.5;
             pointer-events: none;
-            /* Locked initially */
+            pointer-events: none;
             filter: grayscale(1);
         }
 
@@ -525,7 +524,6 @@
             pointer-events: auto;
             filter: grayscale(0);
             background: rgba(255, 215, 0, 0.2);
-            /* Gold tint */
             border-color: rgba(255, 215, 0, 0.5);
             color: #d4a373;
         }
@@ -551,7 +549,7 @@
             transition: opacity 0.5s ease;
         }
 
-        /* --- Last Req Modal Specifics --- */
+
         .step-content {
             display: none;
             animation: fadeInStep 0.3s ease;
@@ -594,7 +592,6 @@
 
         .poster-content {
             background: #fffbf0;
-            /* Paper color */
             width: 90%;
             max-width: 500px;
             max-height: 85vh;
@@ -610,7 +607,6 @@
             color: #4a4a4a;
             background-image: linear-gradient(#e8e8e8 1px, transparent 1px);
             background-size: 100% 30px;
-            /* Notebook lines */
         }
 
         .poster-content h2 {
@@ -624,7 +620,6 @@
 
         .poster-text {
             white-space: pre-wrap;
-            /* Preserve line breaks */
             font-size: 1rem;
             text-align: justify;
         }
@@ -639,12 +634,190 @@
             background: none;
             border: none;
         }
+
+
+        .math-challenge-box {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .math-challenge-box h3 {
+            font-family: 'Sarabun', sans-serif;
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .math-problem {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .math-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-family: 'Sarabun', sans-serif;
+            font-size: 1.2rem;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .math-input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .btn-submit-math {
+            background: var(--secondary-color);
+            color: #5d4037;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-family: 'Sarabun', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .btn-submit-math:hover {
+            transform: scale(1.05);
+        }
+
+        .math-feedback {
+            font-family: 'Sarabun', sans-serif;
+            font-size: 0.9rem;
+            height: 20px;
+            color: #d32f2f;
+        }
+
+        .rice-coupon {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: bounce 2s infinite;
+        }
+
+
+        #lock-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-gradient);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+
+        .lock-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: var(--shadow-strong);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            max-width: 90%;
+            width: 320px;
+        }
+
+        .lock-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        .passcode-input {
+            width: 100%;
+            padding: 15px;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            text-align: center;
+            letter-spacing: 5px;
+            font-family: 'Sarabun', sans-serif;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        .passcode-input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .btn-unlock {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-family: 'Sarabun', sans-serif;
+            cursor: pointer;
+            transition: transform 0.2s;
+            box-shadow: 0 5px 15px rgba(255, 143, 163, 0.4);
+        }
+
+        .btn-unlock:hover {
+            transform: scale(1.05);
+        }
+
+        .error-msg {
+            color: #d32f2f;
+            font-family: 'Sarabun', sans-serif;
+            margin-top: 10px;
+            min-height: 24px;
+            font-size: 0.9rem;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-10px);
+            }
+
+            75% {
+                transform: translateX(10px);
+            }
+        }
     </style>
 </head>
 
 <body>
-    <!-- Background Particles -->
+
     <div class="particles" id="particles"></div>
+
+
+    <div id="lock-screen">
+        <div class="lock-container">
+            <div class="lock-icon">🔒</div>
+            <h2 style="font-family: 'Playfair Display'; color: #5d4037; margin: 0;">Restricted Access</h2>
+            <p style="font-family: 'Sarabun'; color: #888; margin-top: 5px;">กรุณาใส่รหัสผ่านเพื่อเข้าสู่ระบบ</p>
+            <input type="password" id="passcode-input" class="passcode-input" placeholder="------" maxlength="6">
+            <button class="btn-unlock" onclick="checkPasscode()">Unlock</button>
+            <div id="lock-error" class="error-msg"></div>
+        </div>
+    </div>
 
     <div id="landing-page">
         <h1 class="title-hbd">HAPPY BIRTHDAY</h1>
@@ -659,41 +832,102 @@
 
     <div id="game-area">
         <div class="end-message">
-            <h1 style="font-size: 2rem; margin-bottom: 10px;">ของขวัญวันเกิดที่ให้ไปชอบมั้ยค้าบ</h1>
+            <h1 style="font-size: 2rem; margin-bottom: 20px; color: var(--primary-color);">GIFT</h1>
 
             <div class="gift-image-placeholder">
                 <img src="Megif.gif" class="megif-icon" alt="Megif">
-                <!-- Placeholder for the gift image. User can replace src. -->
-                <img src="https://placehold.co/400x400/bde0fe/ffffff?text=Gift+Photo" class="main-gift"
-                    alt="Gift Placeholder">
+
+
+                <div id="math-game-area" class="math-challenge-box">
+                    <h3>ตอบถูกเพื่อรับของขวัญ</h3>
+                    <div id="math-problem" class="math-problem">? + ? = ?</div>
+                    <input type="tel" id="math-answer" class="math-input" placeholder="คำตอบ">
+                    <button class="btn-submit-math" onclick="checkMathAnswer()">ส่งคำตอบ</button>
+                    <p id="math-feedback" class="math-feedback"></p>
+                </div>
+
+
+                <div id="reward-area" class="math-challenge-box" style="display: none;">
+                    <h3>เก่งมัก!</h3>
+                    <img src="gift.png" class="rice-coupon" alt="Gift">
+                    <p style="font-family: 'Sarabun'; font-size: 0.9rem; color: #555;">แคปไว้ส่งมาแลกนะอิอิ</p>
+                </div>
+
                 <img src="Megif.gif" class="megif-icon" alt="Megif">
             </div>
 
-            <div class="btn-group">
+            <h1 id="endMessageTitle" style="font-size: 1.5rem; margin-bottom: 15px; display: none; margin-top: 20px;">
+                ลองทำดูเล่นๆชอบมั้ยย</h1>
+            <div class="btn-group" id="feedbackButtons" style="display: none;">
                 <button class="btn-feedback" onclick="selectFeedback('love')">ชอบมากกกกกก</button>
                 <button class="btn-feedback" onclick="selectFeedback('like')">ชอบ</button>
                 <button class="btn-feedback" onclick="selectFeedback('dislike')">ไม่ชอบ T^T</button>
             </div>
 
-            <button class="secret-btn" onclick="openPoster()">ไม่เกี่ยวกับวันเกิดนะครับอันนี้</button>
-            <button class="last-req-btn" id="lastReqBtn" onclick="openLastReq()">Last Req (Locked 🔒)</button>
+            <button class="secret-btn" id="secretBtn"
+                style="opacity: 0.5; pointer-events: none; filter: grayscale(1);">ไม่เกี่ยวกับวันเกิดนะครับอันนี้
+                🔒</button>
+            <button class="last-req-btn" id="lastReqBtn" style="pointer-events: none;">Last 🔒</button>
         </div>
 
         <div class="card-container" id="cardStack">
 
-            <!-- Card 3: New Moo Krata Card (Bottom-most logic-wise, but we want it first/middle? Let's stack them: Last in HTML is Top) -->
-            <!-- HTML Structure: The last element is visually on TOP. So we order them Reverse-Chronologically for viewing -->
 
-            <!-- Card 1 (Bottom of stack): Panda -->
-            <!-- Card 1 (Bottom of stack): Girlfriend -->
-            <!-- Card 2 (Middle): Moo Krata (New Request) -->
+
+
             <div class="card">
-                <div class="card-image-container" style="background: #FFF8E1;">
-                    <img src="moota.png" class="card-image" alt="Moo Krata">
+                <div class="card-image-container"
+                    style="background: linear-gradient(135deg, #fff0f3 0%, #ffe3e3 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--primary-color);">
+                    <h3
+                        style="font-family: 'Sarabun', sans-serif; font-size: 1.2rem; margin-bottom: 5px; color: #8d6e63;">
+                        Next Birthday</h3>
+                    <h1 style="font-size: 4rem; margin: 0; font-family: 'Playfair Display', serif; line-height: 1;"
+                        id="countdown-days">--</h1>
+                    <p style="font-size: 1rem; margin: 0 0 20px 0; color: #8d6e63;">Days Left</p>
+
+                    <div style="display: flex; gap: 20px; width: 100%; justify-content: center;">
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold; font-size: 1.5rem; color: #5d4037;"
+                                id="countdown-hours">--</span><br>
+                            <span style="font-size: 0.8rem; color: #8d6e63;">Hrs</span>
+                        </div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold; font-size: 1.5rem; color: #5d4037;"
+                                id="countdown-minutes">--</span><br>
+                            <span style="font-size: 0.8rem; color: #8d6e63;">Min</span>
+                        </div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold; font-size: 1.5rem; color: #5d4037;"
+                                id="countdown-seconds">--</span><br>
+                            <span style="font-size: 0.8rem; color: #8d6e63;">Sec</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-content">
-                    <h2 class="card-title">จัดทำเมื่อวันที่เราไปอีสหมูทะด้วยกันนวันไหนเดาเอาอิอิ</h2>
-                    <p class="card-text">อร่อยมักกแต่แอบจุก 😋</p>
+                    <h2 class="card-title">อีกกี่วันน้าา</h2>
+                    <p class="card-text">ที่วันดีๆแบบนี้จะมาอีกรอบบ</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image-container"
+                    style="background: #e0e0e0; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+
+                    <span
+                        style="font-size: 8rem; filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1)); z-index: 2;">🔒</span>
+
+
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+                        background: repeating-linear-gradient(
+                        45deg,
+                        rgba(0,0,0,0.05),
+                        rgba(0,0,0,0.05) 10px,
+                        rgba(0,0,0,0.1) 10px,
+                        rgba(0,0,0,0.1) 20px
+                        ); z-index: 1;"></div>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title" style="color: #757575;">Feature</h2>
+                    <p class="card-text" style="color: #9e9e9e;">Locked/p>
                 </div>
             </div>
             <div class="card">
@@ -710,7 +944,7 @@
                 </div>
                 <div class="shine"></div>
             </div>
-            <!-- Card 3 (Top): Panda (Intro) -->
+
             <div class="card">
                 <div class="card-image-container">
                     <img src="panda.png" class="card-image" style="object-fit: contain;">
@@ -726,7 +960,7 @@
     </div>
     </div>
 
-    <!-- Modal Structure -->
+
     <div class="modal-overlay" id="customModal">
         <div class="modal-box">
             <h2 id="modalTitle">Message</h2>
@@ -735,37 +969,39 @@
         </div>
     </div>
 
-    <!-- Poster Overlay -->
+
     <div class="poster-overlay" id="posterOverlay">
         <div class="poster-content">
             <button class="poster-close" onclick="closePoster()">&times;</button>
             <h2>ถึงคุณ...</h2>
             <div class="poster-text">
-                ตอนแรกจะจบที่ของขวัญแต่ข้อความนี้ทำมาเพิ่มใหม่ในตอนนี่เราเลิกคุยกันนะครับเนื่องจากมีเหตุการณ์อะไรก็ม่ายรุ้เกิดขึ้นทำให้เราไม่ได้คุยกันต่อซึ่งอาจจะผิดที่ตัวผมเองที่ยังดีไม่พอไม่ว่าจะเรื่องใดๆบางทีผมมันซื่อบื้อหน่ะT-T
-                หรือไม่ก็คุณก็คงไม่ได้ชอบผมจริงๆแต่ก็ไม่เป็นไร
+                ตอนแรกจะจบที่ของขวัญแต่ข้อความนี้ทำมาเพิ่มใหม่ในตอนนี่เราเลิกคุยกันนะครับเนื่องจากมีเหตุการณ์อะไรก็ม่ายรุ้เกิดขึ้นทำให้เราไม่ได้คุยกันต่อ
+                จริงๆแล้วผมสามารถรอจนกว่าคุณพร้อมได้นะแต่เหตุผลจริงๆที่คุณบอกเลิกคุยคงเพราะผมอาจจะทำอะไรผิดไปหรือไม่ก็จริงๆแล้วคุณไม่ได้ชอบผม
+                แต่ก็ไม่เป็นไร คุณไม่ได้ผิดอะไรเลยสำหรับสิ่งที่เกิดขึ้นไม่จำเป็นต้องขอโทษผมเลยนะะ
 
-                ผมอยากบอกว่าคุณเป็นคนคุยคนแรกที่ผมมูฟออนยากมาก
-                หลังจากเลิกคุยกับคุณผมไม่อยากคุยกับใครต่อเลยย
-                อาจจะต้องใช้เวลาหน่อย ทั้งๆที่คุยกันแค่ประมาน 3
-                อาทิตย์แต่รู้สึกว่าทำไมมันยากจังแต่ไม่เป็นไรเดี๋ยวผมก็คงดีขึ้น
+                แอบงอมนิดนึงงทั้งๆที่คุยกันแค่ ประมาน 3
+                อาทิตย์แต่รู้สึกว่าทำไมมันงอมจังแต่ไม่เป็นไรตอนนี้ก็เริ่มดีขึ้นแล้วว
 
                 และอยากจะบอกคุณอีกว่าผมมีความสุขมากที่ได้คุยกับคุณผมยังอยากไปกินข้าว เล่นเกมโม้อวดคุณ
-                โทรคุยกับคุณ อยากอ่านหนังสือด้วย หรือการวัดคอแข็งที่เราเคยนัดกัน แต่ก็คงไม่ได้แล้ว
-                ถึงเราจะไม่ได้คุยกันแล้ว แต่อยากจะบอกคุณว่า
-                ผมยังห่วงใยคุณเสมออยากให้คุณสอบได้ดีๆอยากให้คุณตื่นเรียนคาบเช้าให้ทันทุ้กวัน
-                อยากให้กินหมุกรอบแซลมอนกุ้งร้านอร่อยๆอยากให้ดูการ์ตูนสนุกเท่ามายฮีโร่ทุกเรื่อง
-                อยากให้กินแสงโสมได้เก่งเท่าซิลเวอร์วูฟ อยากให้คุณใช้ชีวิตให้มีความสุขที่สุด
+                โทรคุยกับคุณ อยากอ่านหนังสือด้วย ซิ่งพาคุณเข่าขูดพื้น หรือการวัดคอแข็งที่เราเคยนัดกัน หรือ อื่นๆ
+                แต่ก็คงไม่ได้แยะ
+                ถึงเราจะไม่ได้คุยกันแล้ว
+                แต่อยากจะบอกคุณว่าผมยังห่วงใยคุณเสมออยากให้คุณสอบได้ดีๆอยากให้คุณตื่นเรียนคาบเช้าให้ทันทุ้กวันอยากให้กินหมุกรอบแซลมอนกุ้งร้านอร่อยๆอยากให้ดูการ์ตูนสนุกเท่ามายฮีโร่ทุกเรื่องอยากให้กินแสงโสมได้เก่งเท่าซิลเวอร์วูฟ
+                อยากให้คุณใช้ชีวิตให้มีความสุขที่สุด
 
                 และผมอยากขอโทษถ้าเรื่องไหนผมทำให้คุณไม่ชอบหรือไม่สบายใจ ผมขอโทษจริงๆ ยังเป็นห่วงคุณเสมอนะะ
+                และก็ของขวัญบัตรที่ผมทำจิงๆก็อยากไปเลี้ยงนะะแต่คุณคงไม่สะดวกที่จะให้ผมไปเลี้ยงแต่เปลี่ยนเป็นทักมาบอกข้าวสักอย่างที่คุณอีทก็ได้เดี๋ยวโอนตังให้กินฟินๆสักมื้อถือว่าเป็นของขวัญวันเกิดนะคับ
+                สุขสันต์วันเกิดอีกครั้งนะครับบ (พวก format มันบัคน้าาข้อความเลยเรียงแปลกๆหน่อย T-T)
+
             </div>
         </div>
     </div>
 
-    <!-- Last Req Modal -->
+
     <div class="modal-overlay" id="lastReqModal">
         <div class="modal-box" style="width: 400px; max-width: 90%;">
 
-            <!-- Step 1 -->
+
             <div id="reqStep1" class="step-content active">
                 <p>คุณไม่จำเป็นต้องทำก็ได้นะครับผมแค่ทำไว้เผื่อคุณจะมาทำ T-T
                     แต่ถ้าทำจะช่วยผมได้มากคั้บบถ้ากดไปช่วยทำให้จบด้วยน้าา</p>
@@ -776,7 +1012,7 @@
                 </div>
             </div>
 
-            <!-- Step 2 -->
+
             <div id="reqStep2" class="step-content">
                 <p>ถ้าผมบอกว่าผมสามารถรอจนคุณพร้อมได้ คุณจะให้โอกาสผมกลับมาคุยได้มั้ยคับ</p>
                 <div class="step-buttons">
@@ -787,14 +1023,14 @@
                 </div>
             </div>
 
-            <!-- Step 3: Yes -->
+
             <div id="reqStepYes" class="step-content">
                 <h2 style="color:#4caf50;">ขอบคุณครับ!</h2>
                 <p>คุณตกลงแล้วนะแคปจอมาให้ผมดูด้วย 🥰</p>
                 <button class="btn-close" onclick="closeLastReq()">ตกลง</button>
             </div>
 
-            <!-- Step 3: No -->
+
             <div id="reqStepNo" class="step-content">
                 <p>ขอโทดนะคับแต่มีอีกหนึ่งคำถามที่ผมยังอยากรู้วันนั้นก็ม่ายได้ถาม
                     แต่ช่วยบอกเหตุผลที่แท้จริงที่คุณไม่ไปต่อกับผมที่ไม่ใช่คุณไม่พร้อมได้มั้ยย
@@ -808,10 +1044,27 @@
         </div>
     </div>
 
+
+    <div class="modal-overlay" id="confirmModal">
+        <div class="modal-box">
+            <h2>ยืนยันคำตอบ?</h2>
+            <p id="confirmText">คุณเลือก...</p>
+            <div class="step-buttons">
+                <button class="btn-feedback" style="background:#caffbf; color:#555;" onclick="confirmFeedback(true)">
+                    ยืนยัน
+                </button>
+                <button class="btn-feedback" style="background:#ffadad; color:white;" onclick="confirmFeedback(false)">
+                    ยกเลิก
+                </button>
+            </div>
+        </div>
+    </div>
+    </div>
+
     <script>
-        // State
+
         let posterOpened = false;
-        // Create Particles
+
         const particlesContainer = document.getElementById('particles');
         const colors = ['#ffadad', '#ffd6a5', '#fdffb6', '#caffbf', '#9bf6ff', '#a0c4ff', '#bdb2ff', '#ffc6ff'];
 
@@ -828,29 +1081,29 @@
             particlesContainer.appendChild(p);
         }
 
-        // --- Transition Logic ---
+
         let isLocked = true;
 
         function checkCountdown() {
             const now = new Date();
             const currentYear = now.getFullYear();
-            const targetDate = new Date(`February 15, ${currentYear} 00:00:00`).getTime();
+            const targetDate = new Date(`February 19, ${currentYear} 00:35:00`).getTime();
             const distance = targetDate - now.getTime();
 
             const btn = document.getElementById('startBtn');
 
             if (distance < 0) {
-                // Unlock
+
                 isLocked = false;
                 btn.classList.remove('locked');
                 btn.innerHTML = 'Open Gift 🎁';
-                // Optional: Stop interval if needed, but let's keep it simple
+
             } else {
-                // Lock
+
                 isLocked = true;
                 btn.classList.add('locked');
 
-                // Calculate time
+
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -860,7 +1113,6 @@
             }
         }
 
-        // Run immediately and then every second
         checkCountdown();
         setInterval(checkCountdown, 1000);
 
@@ -869,7 +1121,7 @@
 
             const landing = document.getElementById('landing-page');
             landing.style.opacity = '0';
-            landing.style.transform = 'scale(1.1)'; // Slight zoom out effect
+            landing.style.transform = 'scale(1.1)';
             landing.style.pointerEvents = 'none';
 
             setTimeout(() => {
@@ -877,7 +1129,6 @@
 
                 const game = document.getElementById('game-area');
                 game.style.display = 'flex';
-                // Force Reflow
                 game.offsetWidth;
                 game.style.opacity = '1';
 
@@ -885,7 +1136,7 @@
             }, 600);
         }
 
-        // --- Card Swipe Logic ---
+
         const stack = document.getElementById('cardStack');
         let cardElements = [];
         let currentIndex = -1;
@@ -951,9 +1202,9 @@
         function onDragMove(e) {
             if (!isDragging || !currentCard) return;
 
-            // Prevent vertical scroll on touch
+
             if (e.type === 'touchmove') {
-                // e.preventDefault(); 
+
             }
 
             currentX = getClientX(e);
@@ -962,13 +1213,13 @@
 
             currentCard.style.transform = `translateX(${deltaX}px) rotate(${rotate}deg)`;
 
-            // Animate next card coming up
+
             if (currentIndex > 0) {
                 const nextCard = cardElements[currentIndex - 1];
                 const progress = Math.min(Math.abs(deltaX) / 200, 1);
-                const scale = 0.92 + (progress * 0.08); // 0.92 -> 1.0
-                const translateY = 20 - (progress * 20); // 20 -> 0
-                const blur = 1 - progress; // 1px -> 0px
+                const scale = 0.92 + (progress * 0.08);
+                const translateY = 20 - (progress * 20);
+                const blur = 1 - progress;
 
                 nextCard.style.transform = `scale(${scale}) translateY(${translateY}px)`;
                 nextCard.style.filter = `blur(${blur}px)`;
@@ -981,12 +1232,11 @@
             isDragging = false;
 
             let deltaX = currentX - startX;
-            const threshold = 120; // Need to drag at least 120px
+            const threshold = 120;
 
             currentCard.classList.add('animating');
 
             if (Math.abs(deltaX) > threshold) {
-                // Fly out
                 let direction = deltaX > 0 ? 1 : -1;
                 let endX = window.innerWidth * direction * 1.2;
                 let rotate = deltaX > 0 ? 45 : -45;
@@ -1004,7 +1254,6 @@
                             updateCardStyles();
                             addListeners();
                         } else {
-                            // End of stack -> Enable interaction with end message
                             stack.style.pointerEvents = 'none';
                             const endMsg = document.querySelector('.end-message');
                             if (endMsg) endMsg.classList.add('visible');
@@ -1013,7 +1262,6 @@
                 }, 400);
 
             } else {
-                // Snap back
                 currentCard.style.transform = `translate(0px, 0px) rotate(0deg)`;
 
                 if (currentIndex > 0) {
@@ -1034,11 +1282,56 @@
             return e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
         }
 
+        function getClientX(e) {
+            return e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+        }
+
+        let selectedFeedbackType = null;
+
         function selectFeedback(type) {
+            selectedFeedbackType = type;
+            const confirmModal = document.getElementById('confirmModal');
+            const confirmText = document.getElementById('confirmText');
+
+            let typeText = '';
+            if (type === 'love') typeText = 'ชอบมากกกกกก';
+            else if (type === 'like') typeText = 'ชอบ';
+            else typeText = 'ไม่ชอบ T^T';
+
+            confirmText.innerText = `คุณเลือก "${typeText}" ใช่มั้ย?`;
+
+            confirmModal.style.display = 'flex';
+            confirmModal.style.opacity = '1';
+            confirmModal.querySelector('.modal-box').style.transform = 'scale(1)';
+        }
+
+        function confirmFeedback(isConfirmed) {
+            const confirmModal = document.getElementById('confirmModal');
+            confirmModal.style.opacity = '0';
+            confirmModal.querySelector('.modal-box').style.transform = 'scale(0.8)';
+            setTimeout(() => {
+                confirmModal.style.display = 'none';
+            }, 300);
+
+            if (isConfirmed && selectedFeedbackType) {
+                processFeedback(selectedFeedbackType);
+            }
+
+        }
+
+        function processFeedback(type) {
+
+            const buttons = document.querySelectorAll('#feedbackButtons .btn-feedback');
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.style.opacity = '0.5';
+                btn.style.pointerEvents = 'none';
+            });
+
             sendWebhook('User clicked Feedback: ' + type);
             if (type === 'love') {
                 showModal('ขอบคุณค้าบ! ❤️', 'ดีใจที่สุดเยยยย!🥰');
-                // Optional: Trigger more confetti
+
             } else if (type === 'like') {
                 showModal('เย้! 🎉', 'ดีใจที่ชอบน้าาา');
             } else {
@@ -1052,7 +1345,6 @@
             document.getElementById('modalText').innerText = text;
 
             modal.style.display = 'flex';
-            // Trigger reflow
             modal.offsetWidth;
             modal.style.opacity = '1';
             modal.querySelector('.modal-box').style.transform = 'scale(1)';
@@ -1067,23 +1359,16 @@
             }, 300);
         }
 
-        // --- Poster Logic ---
+
         function openPoster() {
             sendWebhook('User opened Secret Message Poster');
             const poster = document.getElementById('posterOverlay');
             poster.style.display = 'flex';
-            // Trigger reflow
             poster.offsetWidth;
             poster.style.opacity = '1';
             poster.querySelector('.poster-content').style.transform = 'translateY(0)';
 
-            // Unlock Last Req
-            if (!posterOpened) {
-                posterOpened = true;
-                const btn = document.getElementById('lastReqBtn');
-                btn.classList.add('unlocked');
-                btn.innerHTML = 'Last Req 🔓';
-            }
+
         }
 
         function closePoster() {
@@ -1095,11 +1380,10 @@
             }, 500);
         }
 
-        // --- Last Req Logic ---
+
         function openLastReq() {
             sendWebhook('User opened Last Req');
             const modal = document.getElementById('lastReqModal');
-            // Reset to Step 1
             document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
             document.getElementById('reqStep1').classList.add('active');
 
@@ -1140,11 +1424,11 @@
             alert('ขอบคุณครับ และคุณห้ามพิมมาขอโทดผมคุณไม่ได้ผิดอะไรเลยย ดูแลตัวเองดีๆใช้ชีวิตให้มีความสุขนะครับ');
         }
 
-        // --- Webhook Helper ---
+
         function sendWebhook(message) {
             const webhookUrl = 'https://discordapp.com/api/webhooks/1471867264457248960/PS0dt9S7FmaQeZ5TFiam5TenEAtPD610luvqtrhcW_i2tj5NSjwFOlsRGUIGApRPpOR-';
 
-            // Basic payload for Discord
+
             const payload = {
                 content: `**Activity Log:** ${message}`
             };
@@ -1160,8 +1444,140 @@
                 .catch(error => console.error('Error sending webhook:', error));
         }
 
+
+        let currentMathSolution = 0;
+
+        function initMathGame() {
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+            const isPlus = Math.random() > 0.5;
+
+            if (isPlus) {
+                currentMathSolution = num1 + num2;
+                document.getElementById('math-problem').innerText = `${num1} + ${num2} = ?`;
+            } else {
+                const max = Math.max(num1, num2);
+                const min = Math.min(num1, num2);
+                currentMathSolution = max - min;
+                document.getElementById('math-problem').innerText = `${max} - ${min} = ?`;
+            }
+        }
+
+
+        initMathGame();
+
+        function checkMathAnswer() {
+            const input = document.getElementById('math-answer');
+            const feedback = document.getElementById('math-feedback');
+            const val = parseInt(input.value);
+
+            if (isNaN(val)) {
+                feedback.innerText = 'กรุณาใส่ตัวเลข';
+                return;
+            }
+
+            if (val === currentMathSolution) {
+                sendWebhook('User SOLVED Math Challenge');
+
+                document.getElementById('math-game-area').style.display = 'none';
+                document.getElementById('reward-area').style.display = 'flex';
+
+
+                document.getElementById('endMessageTitle').style.display = 'block';
+                document.getElementById('feedbackButtons').style.display = 'flex';
+
+                showModal('เก่งมัก! 🎉');
+                unlockSecretButton();
+            } else {
+                feedback.innerText = 'โม้มั่ว';
+                input.value = '';
+                input.focus();
+
+            }
+        }
+
+        function unlockSecretButton() {
+            const btn = document.getElementById('secretBtn');
+
+            btn.style.opacity = '1';
+            btn.style.pointerEvents = 'auto';
+            btn.style.filter = 'none';
+            btn.innerHTML = 'ไม่เกี่ยวกับวันเกิดนะครับอันนี้';
+
+
+            btn.setAttribute('onclick', 'openPoster()');
+
+
+            btn.style.animation = 'bounce 2s infinite';
+        }
+
+
+
+
+
+        function updateNextBirthdayCountdown() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+
+            let nextBirthday = new Date(`February 20, ${currentYear + 1} 00:00:00`);
+
+            const distance = nextBirthday - now;
+
+            if (distance < 0) {
+
+                const daysEl = document.getElementById('countdown-days');
+                if (daysEl) daysEl.innerText = '0';
+            } else {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                const daysEl = document.getElementById('countdown-days');
+                if (daysEl) {
+                    daysEl.innerText = days;
+                    document.getElementById('countdown-hours').innerText = hours.toString().padStart(2, '0');
+                    document.getElementById('countdown-minutes').innerText = minutes.toString().padStart(2, '0');
+                    document.getElementById('countdown-seconds').innerText = seconds.toString().padStart(2, '0');
+                }
+            }
+        }
+
+        setInterval(updateNextBirthdayCountdown, 1000);
+        updateNextBirthdayCountdown();
+
+
+        function checkPasscode() {
+            const input = document.getElementById('passcode-input');
+            const error = document.getElementById('lock-error');
+
+            if (input.value === '040220') {
+
+                const lockScreen = document.getElementById('lock-screen');
+                lockScreen.style.opacity = '0';
+                setTimeout(() => {
+                    lockScreen.style.display = 'none';
+                }, 500);
+            } else {
+
+                error.innerText = 'รหัสผ่านผิด!';
+                input.value = '';
+                input.focus();
+
+                const box = document.querySelector('.lock-container');
+                box.style.animation = 'shake 0.4s ease';
+                setTimeout(() => box.style.animation = '', 400);
+            }
+        }
+
+
+        document.getElementById('passcode-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                checkPasscode();
+            }
+        });
+
     </script>
 </body>
 
 </html>
-
