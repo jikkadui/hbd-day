@@ -811,10 +811,10 @@
     <div id="lock-screen">
         <div class="lock-container">
             <div class="lock-icon">🔒</div>
-            <h2 style="font-family: 'Playfair Display'; color: #5d4037; margin: 0;">Restricted Access</h2>
-            <p style="font-family: 'Sarabun'; color: #888; margin-top: 5px;">กรุณาใส่รหัสผ่านเพื่อเข้าสู่ระบบ</p>
+            <h2 style="font-family: 'Playfair Display'; color: #5d4037; margin: 0;">กรอกรหัสจ้า</h2>
+            <p style="font-family: 'Sarabun'; color: #888; margin-top: 5px;">กรอกผิดโดนว่านะะ</p>
             <input type="password" id="passcode-input" class="passcode-input" placeholder="------" maxlength="6">
-            <button class="btn-unlock" onclick="checkPasscode()">Unlock</button>
+            <button class="btn-unlock" onclick="checkPasscode()">กอกรหัสอิอิ</button>
             <div id="lock-error" class="error-msg"></div>
         </div>
     </div>
@@ -1560,7 +1560,7 @@
                 }, 500);
             } else {
 
-                error.innerText = 'รหัสผ่านผิด!';
+                error.innerText = 'โม้มั่ว!';
                 input.value = '';
                 input.focus();
 
@@ -1581,3 +1581,4 @@
 </body>
 
 </html>
+
